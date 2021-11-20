@@ -1,0 +1,28 @@
+{
+  "bindings": [
+    {
+      "authLevel": "anonymous",
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "res"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "cosmos",
+      "databaseName": "finance-app-cosmos-db",
+      "collectionName": "finance-entries",
+      "createIfNotExists": false,
+      "connectionStringSetting": "cosmosDbConnectionString",
+      "partitionKey": "/category"
+    }
+  ]
+}
