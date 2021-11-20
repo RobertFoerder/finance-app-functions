@@ -1,3 +1,7 @@
 {
-    "name": "Azure"
+    "year": 2021,
+    "month": 11,
+    "category": "Wohnung",
+    "description": "Miete",
+    "value": 1175
 }
