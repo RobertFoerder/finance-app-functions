@@ -107,7 +107,6 @@ function validateNumericValue(value) {
 }
 
 function validateCurrencyValue(value) {
-    var text  = /^(?=.*?\d)^\$?(([1-9]\d{0,2}(,\d{3})*)|\d+)?(\.\d{1,2})?$/;
-
+    var text = /^-?[1-9]\d*(\.\d{1,2})?$|^-?0+\.[1-9]\d?$|^-?0+\.\d[1-9]$/;
     return text.test(value);
 }
