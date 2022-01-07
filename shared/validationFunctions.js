@@ -78,7 +78,7 @@ function validateYear(context, year) {
 }
 
 function validateMonth(context, month) {
-    if (!month) {
+    if (month == null || month == undefined) {
         context.log('month not set');
         return false;
     }
@@ -88,8 +88,8 @@ function validateMonth(context, month) {
         return false;
     }
 
-    if (month < 1 || month > 12) {
-        context.log('month has to be between 1 and 12');
+    if (month < 0 || month > 11) {
+        context.log('month has to be between 0 and 11');
         return false;
     }
 
