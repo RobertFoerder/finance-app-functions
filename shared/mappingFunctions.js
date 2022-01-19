@@ -6,7 +6,8 @@ module.exports = {
             month: cosmosDbItem.month,
             category: cosmosDbItem.category,
             description: cosmosDbItem.description,
-            value: cosmosDbItem.value
+            value: cosmosDbItem.value,
+            date: cosmosDbItem.date
         };
     }
 }

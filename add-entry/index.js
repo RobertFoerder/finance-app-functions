@@ -27,6 +27,7 @@ function mapToCosmosDbEntry(financeEntry) {
         month: financeEntry.month,
         category: financeEntry.category,
         description: financeEntry.description,
-        value: financeEntry.value
+        value: financeEntry.value,
+        date: financeEntry.date
     };
 }
