@@ -12,7 +12,7 @@ module.exports = async function (context, req) {
 
     const queryString = buildQueryString(req.query.year, req.query.month, req.query.category);
 
-    const { resources: results } = await cosmos.getContainer(context).items.query(queryString).fetchAll();
+    const { resources: results } = await cosmos.getFinanceEntriesContainer(context).items.query(queryString).fetchAll();
 
     const financeEntries = results.map(entry => mapping.mapToFinanceEntry(entry));
 

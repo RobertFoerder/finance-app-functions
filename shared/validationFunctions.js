@@ -50,7 +50,25 @@ module.exports = {
         }
     
         return true;
-    }
+    },
+    validateAccount: function(context, account) {
+        if (!account) {
+            context.log('account not set');
+            return false;
+        }
+
+        if (!account.name || isBlank(account.name)) {
+            context.log('name not set');
+            return false;
+        }
+    
+        if (!account.value || !validateCurrencyValue(account.value)) {        
+            context.log('invalid value');
+            return false;
+        }
+            
+        return true;
+    },
 }
 
 function isBlank(str) {

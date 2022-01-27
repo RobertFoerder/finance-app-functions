@@ -10,7 +10,7 @@ module.exports = async function (context, req) {
         })
     }
 
-    const { resource: cosmosDbItem } = await cosmos.getContainer(context).items.create(mapToCosmosDbEntry(req.body));
+    const { resource: cosmosDbItem } = await cosmos.getFinanceEntriesContainer(context).items.create(mapToCosmosDbEntry(req.body));
     
     return (context.res = {
         status: 201,

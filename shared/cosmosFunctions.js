@@ -2,10 +2,14 @@ const { CosmosClient } = require('@azure/cosmos');
 const connectionString = process.env['cosmosDbConnectionString'];
 const client = new CosmosClient(connectionString);
 const databaseId  = process.env['cosmosDbDatabase'];
-const containerId  = process.env['cosmosDbContainer'];
+const financeEntriesContainerId  = process.env['cosmosDbFinanceEntriesContainer'];
+const accountsContainerId = process.env['cosmosDbAccountsContainer'];
 
 module.exports = {
-    getContainer: function() {
-        return client.database(databaseId).container(containerId);
+    getFinanceEntriesContainer: function() {
+        return client.database(databaseId).container(financeEntriesContainerId);
+    },
+    getAccountsContainer: function() {
+        return client.database(databaseId).container(accountsContainerId);
     }
 }

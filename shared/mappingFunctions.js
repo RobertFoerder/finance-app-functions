@@ -9,5 +9,12 @@ module.exports = {
             value: cosmosDbItem.value,
             date: cosmosDbItem.date
         };
+    },
+    mapToAccount: function(cosmosDbItem) {
+        return {
+            id: cosmosDbItem.id,
+            name: cosmosDbItem.name,
+            value: cosmosDbItem.value
+        }
     }
 }
