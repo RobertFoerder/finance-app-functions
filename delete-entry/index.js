@@ -13,7 +13,7 @@ module.exports = async function (context, req) {
         });
     }
 
-    await cosmos.getFinanceEntriesContainer().item(id, results[0].category).delete();
+    await cosmos.getFinanceEntriesContainer().item(id, results[0].year).delete();
 
     return (context.res = {
         status: 204

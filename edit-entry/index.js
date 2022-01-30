@@ -23,7 +23,7 @@ module.exports = async function (context, req) {
     }
 
     const { resource: cosmosDbItem } = await cosmos.getFinanceEntriesContainer(context)
-    .item(id, results[0].category).replace(mapToCosmosDbEntry(id, results[0].category, req.body));
+    .item(id, results[0].year).replace(mapToCosmosDbEntry(id, results[0].year, req.body));
     
     return (context.res = {
         status: 200,
@@ -34,12 +34,12 @@ module.exports = async function (context, req) {
     });
 }
     
-function mapToCosmosDbEntry(id, category, financeEntry) {
+function mapToCosmosDbEntry(id, year, financeEntry) {
     return {
         id,
-        year: financeEntry.year,
+        year,
         month: financeEntry.month,
-        category,
+        category: financeEntry.category,
         description: financeEntry.description,
         value: financeEntry.value,
         date: financeEntry.date
