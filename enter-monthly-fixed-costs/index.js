@@ -6,7 +6,7 @@ module.exports = async function (context, myTimer) {
 
     const fixedCosts = results.map(entry => mapping.mapToFixedCost(entry));
 
-    fixedCosts.forEach((fixedCost) => {
+    fixedCosts.forEach(async (fixedCost) => {
         const financeEntry = createFinanceEntry(fixedCost);
         await cosmos.getFinanceEntriesContainer(context).items.create(financeEntry);
     });
