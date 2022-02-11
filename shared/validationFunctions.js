@@ -69,6 +69,29 @@ module.exports = {
             
         return true;
     },
+    validateFixedCost: function(context, fixedCost) {
+        if (!fixedCost) {
+            context.log('fixed cost not set');
+            return false;
+        }
+    
+        if (!fixedCost.category || isBlank(fixedCost.category)) {
+            context.log('category not set');
+            return false;
+        }
+    
+        if (!fixedCost.description || isBlank(fixedCost.description)) {
+            context.log('description not set');
+            return false;
+        }
+    
+        if (!fixedCost.value || !validateCurrencyValue(fixedCost.value)) {        
+            context.log('invalid value');
+            return false;
+        }
+            
+        return true;
+    }
 }
 
 function isBlank(str) {

@@ -16,5 +16,13 @@ module.exports = {
             name: cosmosDbItem.name,
             value: cosmosDbItem.value
         }
+    },
+    mapToFixedCost: function(cosmosDbItem) {
+        return {
+            id: cosmosDbItem.id,
+            category: cosmosDbItem.category,
+            description: cosmosDbItem.description,
+            value: cosmosDbItem.value
+        }
     }
 }
